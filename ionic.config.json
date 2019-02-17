@@ -1,5 +1,7 @@
 {
   "name": "EcoPizza",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
