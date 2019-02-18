@@ -6,37 +6,40 @@
 
 <ion-content padding>
 
-  <ion-card>
+  <ion-card (click)="cardClicked()">
     <ion-card-header>
-      <ion-card-subtitle>Combo</ion-card-subtitle>
-      <ion-card-title>Pepperonni</ion-card-title>
-    </ion-card-header>
-  </ion-card>
-
-
-  <ion-card>
-    <ion-card-header>
-       <ion-card-subtitle>Combo</ion-card-subtitle>
-       <ion-card-title>Hawaianna</ion-card-title>
-    </ion-card-header>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-header>
-      <ion-card-subtitle>Combo</ion-card-subtitle>
-      <ion-card-title>Americana</ion-card-title>
+      <ion-card-subtitle></ion-card-subtitle>
+      <ion-card-title>All the meats</ion-card-title>
+      <img src="../../assets/img/allthemeats.jpg"/> 
     </ion-card-header>
   </ion-card>
 
 
   <ion-card (click)="cardClicked()">
     <ion-card-header>
-      <ion-card-subtitle>Combo</ion-card-subtitle>
+       <ion-card-subtitle></ion-card-subtitle>
+       <ion-card-title>Hawaiana</ion-card-title>
+       <img src="../../assets/img/hawaiana.jpg"/> 
+      </ion-card-header>
+  </ion-card>
+
+  <ion-card (click)="cardClicked()">
+    <ion-card-header>
+      <ion-card-subtitle></ion-card-subtitle>
+      <ion-card-title>Americana</ion-card-title>
+      <img src="../../assets/img/americana.jpg"/> 
+    </ion-card-header>
+  </ion-card>
+
+
+  <ion-card (click)="cardClicked()">
+    <ion-card-header>
+      <ion-card-subtitle></ion-card-subtitle>
       <ion-card-title>EcoPizza</ion-card-title>
+      <img src="../../assets/img/ecopizza.jpg"/> 
     </ion-card-header>
 
     <ion-card-content>
-      <ion-img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3gyKWYnRJZp6qwUQSxUAVzfXqBKc7OXns6sMg9V9P-Rpw9HsC"></ion-img>
     </ion-card-content>
 
   </ion-card>
