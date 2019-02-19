@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-//  { path: '', redirectTo: 'home', pathMatch: 'full' },
+ { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'tabs', loadChildren: './tabs/tabs.module#TabsPageModule' },
   //{path: 'petition', loadChildren: './petition/petition.module#PetitionPageModule'},
-  { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
+  { path: 'login', loadChildren: './login/login.module#LoginPageModule'},
+  { path: 'user', loadChildren: './user/user.module#UserPageModule' },
 ];
 
 @NgModule({

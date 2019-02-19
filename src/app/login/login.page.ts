@@ -36,7 +36,7 @@ export class LoginPage implements OnInit {
             'offline': true
         })
             .then(user => {
-                this.nativeStorage.setItem('google_user',{
+                this.nativeStorage.setItem('google_user', {
                     name: user.displayName,
                     email: user.email,
                     picture: user.imageUrl

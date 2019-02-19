@@ -26,7 +26,7 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.nativeStorage.getItem('google_user')
           .then(data => {
-            this.router.navigate(['/tabs']);
+            this.router.navigate(['/home']);
             this.splashScreen.hide();
           }, error => {
             this.router.navigate(['/login']);
