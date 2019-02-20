@@ -15,7 +15,7 @@ import * as firebase from 'firebase';
     styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-    logged_In : boolean = false;
+    logged_In = false;
     userProfile: any = null;
     FB_APP_ID = 277392406522365;
 
@@ -24,9 +24,9 @@ export class LoginPage implements OnInit {
                 public authProvider: AuthService
     ) {
       firebase.auth().onAuthStateChanged(user => {
-          if(user){
+          if (user){
               this.userProfile = user;
-          }else{
+          } else{
               this.userProfile = null;
           }
       });
@@ -39,7 +39,7 @@ export class LoginPage implements OnInit {
         this.authProvider.facebookLogin().then(
             res => {
                 console.log('Login Exitoso', res);
-                this.navCtrl.navigateForward(['/tabs']);
+                this.navCtrl.navigateForward(['/tabs/home']);
                 this.logged_In = true;
             }
         ).catch(error => console.log('Error de inicio de sesion', error));

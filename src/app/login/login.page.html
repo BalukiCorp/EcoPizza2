@@ -1,16 +1,17 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Login</ion-title>
+    <ion-title *ngIf="logged_In == true">Cerrar Sesion</ion-title>
+    <ion-title *ngIf="logged_In == false">Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <p>Iniciar sesion con</p>
+  <p *ngIf="logged_In==false">Iniciar sesion con</p>
 
-    <ion-button *ngIf="logged_In==false" (click)="doFbLogin()" expand="block" color="primary" size="default" type="button" shape="round">
+    <ion-button *ngIf="logged_In == false" (click)="doFbLogin()" expand="block" color="primary" size="default" type="button" shape="round">
       <ion-icon name="logo-facebook"></ion-icon>
     </ion-button>
-    <ion-button *ngIf="logged_In==true" (click)="signOut()" expand="block" color="primary" size="default" type="button" shape="round">
+    <ion-button *ngIf="logged_In == true" (click)="signOut()" expand="block" color="primary" size="default" type="button" shape="round">
       Cerrar Sesion
     </ion-button>
 </ion-content>
