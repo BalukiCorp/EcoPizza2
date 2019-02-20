@@ -35,7 +35,10 @@ export class AuthService {
           }
 
         }).catch((error) => {
-          console.log(error)
+          console.log(error);
         });
+  }
+  signOut() {
+      firebase.auth().signOut();
   }
 }

@@ -7,8 +7,10 @@
 <ion-content padding>
   <p>Iniciar sesion con</p>
 
-    <ion-button (click)="doFbLogin()" expand="block" color="danger" size="default" type="button" shape="round">
-      <ion-icon name="logo-googleplus"></ion-icon>
+    <ion-button *ngIf="logged_In==false" (click)="doFbLogin()" expand="block" color="primary" size="default" type="button" shape="round">
+      <ion-icon name="logo-facebook"></ion-icon>
     </ion-button>
-
+    <ion-button *ngIf="logged_In==true" (click)="signOut()" expand="block" color="primary" size="default" type="button" shape="round">
+      Cerrar Sesion
+    </ion-button>
 </ion-content>
