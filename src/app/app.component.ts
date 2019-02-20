@@ -22,17 +22,11 @@ export class AppComponent {
     this.initializeApp();
   }
 
-  initializeApp() {
-    this.platform.ready().then(() => {
-      this.nativeStorage.getItem('google_user')
-          .then(data => {
-            this.router.navigate(['/tabs']);
-            this.splashScreen.hide();
-          }, error => {
-            this.router.navigate(['/login']);
-            this.splashScreen.hide();
-          });
-      this.statusBar.styleDefault();
-    });
-  }
+    initializeApp() {
+        this.platform.ready().then(() => {
+
+
+            this.statusBar.styleDefault();
+        });
+    }
 }

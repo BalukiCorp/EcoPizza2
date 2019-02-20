@@ -4,7 +4,15 @@
 
 export const environment = {
     production: false,
-    webClientId: '365951267325-1qngfdgor2v273ecm0vbekf0cj58bb5l.apps.googleusercontent.com'
+    ClientId: '365951267325-3vo9etumoarluao3oio0mam1ni26bpb9.apps.googleusercontent.com',
+    firebaseConfig: {
+        apiKey: "AIzaSyAmnX3p5JlyN0aveQPtd17-hki3fDXV9XE",
+        authDomain: "ecopizza-faef8.firebaseapp.com",
+        databaseURL: "https://ecopizza-faef8.firebaseio.com",
+        projectId: "ecopizza-faef8",
+        storageBucket: "ecopizza-faef8.appspot.com",
+        messagingSenderId: "365951267325"
+    }
 };
 
 /*

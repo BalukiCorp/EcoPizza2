@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {GooglePlus} from '@ionic-native/google-plus/ngx';
-import {AlertController, LoadingController, Platform} from '@ionic/angular';
+import {AlertController, LoadingController, NavController, Platform} from '@ionic/angular';
 import {Router} from '@angular/router';
 import {NativeStorage} from '@ionic-native/native-storage/ngx';
-import {environment} from '../../environments/environment';
+import {AuthService} from '../auth.service';
+import {Facebook} from '@ionic-native/facebook/ngx';
+import * as firebase from 'firebase';
+
 
 
 
@@ -14,55 +16,31 @@ import {environment} from '../../environments/environment';
 })
 export class LoginPage implements OnInit {
 
-    constructor(private googlePlus: GooglePlus,
-                public loadingController: LoadingController,
-                private nativeStorage: NativeStorage,
-                private router: Router,
-                private platform: Platform,
-                public alertController: AlertController,
-    ) { }
+    userProfile: any = null;
+    FB_APP_ID = 277392406522365;
+
+    constructor(private fb: Facebook,
+                public navCtrl: NavController,
+                public authProvider: AuthService
+    ) {
+      firebase.auth().onAuthStateChanged(user => {
+          if(user){
+              this.userProfile = user;
+          }else{
+              this.userProfile = null;
+          }
+      });
+    }
 
     ngOnInit() {
     }
-    async doGoogleLogin() {
-        const loading = await this.loadingController.create({
-            message: 'Please wait ...'
-        });
-        this.presentLoading(loading);
 
-        this.googlePlus.login({
-            'scopes': '',
-            'webClientId': environment.webClientId,
-            'offline': true
-        })
-            .then(user => {
-                this.nativeStorage.setItem('google_user', {
-                    name: user.displayName,
-                    email: user.email,
-                    picture: user.imageUrl
-                })
-                    .then(() => {
-                    this.router.navigate(['/tabs']);
-                }, (error) => {
-                    console.log(error);
-                });
-                loading.dismiss();
-            }, err => {
-                console.log(err);
-                if (!this.platform.is('cordova')) {
-                    this.presentAlert();
-                }
-                loading.dismiss();
-            });
-    }
-    async presentLoading(loading) {
-        return await loading.present();
-    }
-    async presentAlert() {
-        const alert = await this.alertController.create({
-           message: 'Cordova is not available on desktop try on real device or emulator',
-           buttons: ['OK'],
-        });
-        await alert.present();
+    doFbLogin() {
+        this.authProvider.facebookLogin().then(
+            res => {
+                console.log('Login Exitoso', res);
+                this.navCtrl.navigateForward(['/tabs']);
+            }
+        ).catch(error => console.log('Error de inicio de sesion', error));
     }
 }
