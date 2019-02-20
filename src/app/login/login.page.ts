@@ -43,6 +43,7 @@ export class LoginPage implements OnInit {
                 })
                     .then(() => {
                     this.router.navigate(['/tabs']);
+                    this.alertController.create({message: 'Sesion Iniciada'});
                 }, (error) => {
                     console.log(error);
                 });
