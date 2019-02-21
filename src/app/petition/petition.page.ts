@@ -58,7 +58,7 @@ export class PetitionPage implements OnInit {
       this.todo = res;
     });
   }
-
+//PINCHE SIAVICHAY NO DAÑES TU CODIGO
   async saveTodo() {
 
     const loading = await this.loadingController.create({
