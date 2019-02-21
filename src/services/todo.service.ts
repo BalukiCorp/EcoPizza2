@@ -16,7 +16,7 @@ export interface Todo {
   location: string;
   category: string;
 }
- 
+
 @Injectable({
   providedIn: 'root'
 })

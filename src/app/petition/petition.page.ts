@@ -19,23 +19,21 @@ import {Observable} from 'rxjs';
 export class PetitionPage implements OnInit {
   formRegister: FormGroup;
   todo: Todo = {
-    
-    
     name: '',
     telephone: '',
     location: '',
- 
+    category: '',
   };
   todoId = null;
 
 
   constructor(private route: ActivatedRoute, public navCtrl: NavController, public formBuilder: FormBuilder,
-    private todoService: TodoService, private loadingController: LoadingController) { 
+    private todoService: TodoService, private loadingController: LoadingController) {
     this.formRegister = this.formBuilder.group({
       name: ['', Validators.required],
     location: ['', Validators.required],
     telephone: ['', Validators.required],
-    category: ['', Validators.required],    
+    category: ['', Validators.required],
     });
   }
 
@@ -54,7 +52,7 @@ export class PetitionPage implements OnInit {
       message: 'Loading Todo..'
     });
     await loading.present();
- 
+
     this.todoService.getTodo(this.todoId).subscribe(res => {
       loading.dismiss();
       this.todo = res;
@@ -67,7 +65,7 @@ export class PetitionPage implements OnInit {
       message: 'Pedido enviado..'
     });
     await loading.present();
- 
+
     if (this.todoId) {
       this.todoService.updateTodo(this.todo, this.todoId).then(() => {
         let textInput = document.querySelector("#imageUser");
@@ -77,8 +75,6 @@ export class PetitionPage implements OnInit {
     } else {
       this.todoService.addTodo(this.todo).then(() => {
         loading.dismiss();
-        
-       // this.nav.goBack('home');
       });
     }
   }
