@@ -14,7 +14,7 @@ export interface Todo {
   name: string;
   telephone: string;
   location: string;
- 
+  category: string;
 }
  
 @Injectable({
