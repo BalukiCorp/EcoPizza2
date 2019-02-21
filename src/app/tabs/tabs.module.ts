@@ -24,6 +24,10 @@ const routes: Routes = [
         path: 'petition',
         loadChildren: '../petition/petition.module#PetitionPageModule'
       },
+      {
+        path: 'order',
+        loadChildren: '../order/order.module#OrderPageModule'
+      }
     ]
   },
   {
