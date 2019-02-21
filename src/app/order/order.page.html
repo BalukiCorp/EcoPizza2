@@ -1,9 +1,21 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>order</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-
+  <ion-card  *ngFor="let todos of todos" >
+    <ion-card-header>
+      <ion-card-subtitle class="colorsubtitulo"></ion-card-subtitle>
+      <ion-card-title class="colortitulo">ECO PIZZA</ion-card-title>
+    <!---->  
+    </ion-card-header>
+    <ion-card-content>
+        <h6>Nombre: {{todos.name}}</h6>
+      <h6>Dirección: {{todos.location}}</h6>
+      <h6>Teléfono: {{todos.telephone}}</h6>
+      <h6>Tipo de pizza: {{todos.category}}</h6>    
+    </ion-card-content>
+  </ion-card>
 </ion-content>
