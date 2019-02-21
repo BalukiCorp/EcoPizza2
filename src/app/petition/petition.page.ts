@@ -44,7 +44,7 @@ export class PetitionPage implements OnInit {
     }
   }
 
-  backClicked(){
+  backClicked() {
      this.navCtrl.pop();
   }
   async loadTodo() {
@@ -71,10 +71,12 @@ export class PetitionPage implements OnInit {
         let textInput = document.querySelector("#imageUser");
 
         loading.dismiss();
+
       });
     } else {
       this.todoService.addTodo(this.todo).then(() => {
         loading.dismiss();
+        this.navCtrl.navigateForward(['/tabs/home']);
       });
     }
   }

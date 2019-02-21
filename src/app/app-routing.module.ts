@@ -7,6 +7,7 @@ const routes: Routes = [
   {path: 'petition', loadChildren: './petition/petition.module#PetitionPageModule'},
   { path: 'login', loadChildren: './login/login.module#LoginPageModule'},
   { path: 'user', loadChildren: './user/user.module#UserPageModule' },
+  { path: 'order', loadChildren: './order/order.module#OrderPageModule' },
 ];
 
 @NgModule({
