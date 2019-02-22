@@ -1,12 +1,17 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title>Menu</ion-title>
+    <ion-buttons slot="end">
+      <ion-button type="button" (click)="addPetition_Clicked()">
+        <ion-icon name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
 
-  <ion-card (click)="cardClicked()" id="{{americana}}">
+  <ion-card id="{{americana}}">
     <ion-card-header>
       <ion-card-subtitle></ion-card-subtitle>
       <ion-card-title>All the meats</ion-card-title>
@@ -15,7 +20,7 @@
   </ion-card>
 
 
-  <ion-card (click)="cardClicked()">
+  <ion-card >
     <ion-card-header>
        <ion-card-subtitle></ion-card-subtitle>
        <ion-card-title>Hawaiana</ion-card-title>
@@ -23,7 +28,7 @@
       </ion-card-header>
   </ion-card>
 
-  <ion-card (click)="cardClicked()">
+  <ion-card>
     <ion-card-header>
       <ion-card-subtitle></ion-card-subtitle>
       <ion-card-title>Americana</ion-card-title>
@@ -32,7 +37,7 @@
   </ion-card>
 
 
-  <ion-card (click)="cardClicked()">
+  <ion-card >
     <ion-card-header>
       <ion-card-subtitle></ion-card-subtitle>
       <ion-card-title>EcoPizza</ion-card-title>

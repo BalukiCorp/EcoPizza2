@@ -13,7 +13,9 @@ export class MenuPage implements OnInit {
 
   ngOnInit() {
   }
-  cardClicked() {
-    this.navCtrl.navigateForward('/petition');
+
+
+  addPetition_Clicked(){
+    this.navCtrl.navigateForward(['/petition']);
   }
 }
