@@ -2,6 +2,12 @@
   <ion-toolbar>
     <ion-title *ngIf="logged_In == true">Cerrar Sesion</ion-title>
     <ion-title *ngIf="logged_In == false">Login</ion-title>
+
+    <ion-buttons slot="start">
+      <ion-button *ngIf="logged_In == true" (click)="backButton()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
