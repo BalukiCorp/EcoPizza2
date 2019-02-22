@@ -5,11 +5,55 @@
 </ion-header>
 
 <ion-content padding>
+    <form [formGroup]="formRegister" (ngSubmit)="submit()">
+        <ion-item>
+            <ion-icon name="person"></ion-icon>
+              <ion-input formControlName="name" required type="text" placeholder="Nombre" [(ngModel)]="todo.name" ></ion-input>
+        </ion-item>
+        
+      <ion-item>
+        <ion-icon name="call"></ion-icon>
+          <ion-input formControlName="telephone" required type="number" placeholder="Teléfono" [(ngModel)]="todo.telephone"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+       <ion-icon name="compass"></ion-icon>
+       <ion-input formControlName="location" required type="text" placeholder="Dirección" [(ngModel)]="todo.location"></ion-input>
+    </ion-item>
+    
+    <ion-item >
+      <ion-icon name="clipboard" item-start ></ion-icon>
+
+      <ion-label>Tipo de pizza</ion-label>
+      <ion-select formControlName="category" value="brown" okText="Okay" cancelText="Dismiss" [(ngModel)]="todo.category">
+        <ion-select-option value="AMERICANA">AMERICANA</ion-select-option>
+        <ion-select-option value="ALL THE MEATS">ALL THE MEATS</ion-select-option>
+        <ion-select-option value="HAWAIANA">HAWAIANA</ion-select-option>
+        <ion-select-option value="ECOPIZZA">ECOPIZZA</ion-select-option>
+
+      </ion-select>
+    </ion-item>
+<ion-item>
+      <ion-label>TAMAÑO</ion-label>
+      <ion-select formControlName="size" value="brown" okText="Okay" cancelText="Dismiss" [(ngModel)]="todo.size">
+        <ion-select-option value="FAMILIAR $14.99">FAMILIAR $14.99</ion-select-option>
+        <ion-select-option value="MEDIANA $11.99">MEDIANA $11.99</ion-select-option>
+        <ion-select-option value="PEQUEÑA $7.99">Pequeña $7.99</ion-select-option>
+      </ion-select>
+    </ion-item>
+    
+    <ion-button type="submit" [disabled]="!formRegister.valid"  shape="round" expand="full" (click)="saveTodo()">
+        <ion-icon name="send"></ion-icon>
+        Enviar pedido
+      </ion-button>
+    </form>
+    
+  <!--
   <ion-card   *ngIf="hasOrdered == true">
     <ion-card-header>
       <ion-card-subtitle class="colorsubtitulo"></ion-card-subtitle>
       <ion-card-title class="colortitulo">ECO PIZZA</ion-card-title>
-    <!---->  
+      
     </ion-card-header>
     <ion-card-content *ngFor="let todos of todos">
         <h6>Nombre: {{todos.name}}</h6>
@@ -18,4 +62,5 @@
       <h6>Tipo de pizza: {{todos.category}}</h6>    
     </ion-card-content>
   </ion-card>
+-->
 </ion-content>

@@ -14,6 +14,7 @@ export interface Todo {
   name: string;
   telephone: string;
   location: string;
+  size: string;
   category: string;
 }
 

@@ -10,37 +10,5 @@
 </ion-header>
 
 <ion-content padding>
-    <form [formGroup]="formRegister">
-    <ion-item>
-        <ion-icon name="person"></ion-icon>
-          <ion-input formControlName="name" required type="text" placeholder="Nombre" [(ngModel)]="todo.name" ></ion-input>
-    </ion-item>
-    
-  <ion-item>
-    <ion-icon name="call"></ion-icon>
-      <ion-input formControlName="telephone" required type="number" placeholder="Teléfono" [(ngModel)]="todo.telephone"></ion-input>
-</ion-item>
-
-<ion-item>
-   <ion-icon name="compass"></ion-icon>
-   <ion-input formControlName="location" required type="text" placeholder="Dirección" [(ngModel)]="todo.location"></ion-input>
-</ion-item>
-
-<ion-item >
-  <ion-icon name="clipboard" item-start ></ion-icon>
-
-  <ion-label>Tipo de pizza</ion-label>
-  <ion-select formControlName="category" value="brown" okText="Okay" cancelText="Dismiss" [(ngModel)]="todo.category">
-    <ion-select-option value="Familiar $14.99">Familiar</ion-select-option>
-    <ion-select-option value="Mediana $11.99">Mediana</ion-select-option>
-    <ion-select-option value="Pequeña $7.99">Pequeña</ion-select-option>
-  </ion-select>
-</ion-item>
-
-<ion-button type="submit" [disabled]="!formRegister.valid"  shape="round" expand="full" (click)="saveTodo()">
-    <ion-icon name="send"></ion-icon>
-    Enviar pedido
-  </ion-button>
-</form>
-
+   
 </ion-content>
