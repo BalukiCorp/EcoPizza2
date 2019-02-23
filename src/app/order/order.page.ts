@@ -21,12 +21,19 @@ import {Observable} from 'rxjs';
 
 
 export class OrderPage implements OnInit {
+  todos: Todo[];
+
+
   constructor(private route: ActivatedRoute, public formBuilder: FormBuilder,
     private todoService: TodoService, public navCtrl: NavController,
     private loadingController: LoadingController) {
      }
 
   ngOnInit() {
+    this.todoService.getTodos().subscribe(res => {
+      this.todos = res;
+    });
+
   }
 
 }

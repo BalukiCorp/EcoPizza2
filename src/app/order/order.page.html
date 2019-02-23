@@ -5,5 +5,17 @@
 </ion-header>
 
 <ion-content padding>
-  <p>Realiza un pedido</p>
+  <ion-card *ngFor="let todos of todos">
+    <ion-card-header>
+      
+      <ion-card-title class="colortitulo">{{todos.category}}</ion-card-title>
+      
+    </ion-card-header>
+    <ion-card-content >
+        <h6>Nombre: {{todos.name}}</h6>
+      <h6>Dirección: {{todos.location}}</h6>
+      <h6>Teléfono: {{todos.telephone}}</h6>
+      <h6>Tipo de pizza: {{todos.size}}</h6>    
+    </ion-card-content>
+  </ion-card>
 </ion-content>
