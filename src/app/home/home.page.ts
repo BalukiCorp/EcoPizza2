@@ -11,4 +11,8 @@ export class HomePage {
   profileClicked() {
     this.navCtrl.navigateForward(['/login']);
   }
+
+  addPetition_Clicked(){
+    this.navCtrl.navigateForward(['/petition']);
+  }
 }

@@ -25,6 +25,9 @@ export class PetitionPage implements OnInit {
     location: '',
     size: '',
     category: '',
+    drink:'',
+    quantity:'',
+    drink_quantity:'',
   };
   
   
@@ -38,6 +41,9 @@ export class PetitionPage implements OnInit {
       telephone: ['', Validators.required],
       category: ['', Validators.required],
       size: ['', Validators.required],
+      drink: ['', Validators.required],
+      drink_quantity: ['', Validators.required],
+      quantity: ['', Validators.required],
       });    
   }
 
@@ -86,4 +92,21 @@ export class PetitionPage implements OnInit {
       });
     }
   }
+
+
+
+  alerta()
+    {
+    var mensaje;
+    var opcion = confirm("Desea realizar otro pedido");
+    if (opcion == true) {
+        mensaje = "SI";
+
+	} else {
+	    mensaje = "NO";
+	}
+//	document.getElementById("ejemplo").innerHTML = mensaje;
+}
+
+
 }

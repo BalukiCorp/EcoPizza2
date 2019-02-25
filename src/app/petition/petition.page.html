@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-button (click)="backClicked()">
         <ion-icon name="arrow-back"></ion-icon>
@@ -10,7 +10,7 @@
 </ion-header>
 
 <ion-content padding>
-    <form [formGroup]="formRegister" (ngSubmit)="submit()">
+    <form [formGroup]="formRegister">
         <ion-item>
             <ion-icon name="person"></ion-icon>
               <ion-input formControlName="name" required type="text" placeholder="Nombre" [(ngModel)]="todo.name" ></ion-input>
@@ -39,15 +39,58 @@
       </ion-select>
     </ion-item>
 <ion-item>
-      <ion-label>TAMAÑO</ion-label>
+    <ion-icon name="clipboard" item-start ></ion-icon>
+
+      <ion-label>Tamaño</ion-label>
       <ion-select formControlName="size" value="brown" okText="Okay" cancelText="Dismiss" [(ngModel)]="todo.size">
         <ion-select-option value="FAMILIAR $14.99">FAMILIAR $14.99</ion-select-option>
         <ion-select-option value="MEDIANA $11.99">MEDIANA $11.99</ion-select-option>
         <ion-select-option value="PEQUEÑA $7.99">Pequeña $7.99</ion-select-option>
       </ion-select>
     </ion-item>
+  
+    <ion-item>
+        <ion-icon name="clipboard" item-start ></ion-icon>
+
+        <ion-label>Cantidad de pizza</ion-label>
+        <ion-select formControlName="quantity" value="brown" okText="Okay" cancelText="Dismiss" [(ngModel)]="todo.quantity">
+          <ion-select-option value="1">1</ion-select-option>
+          <ion-select-option value="2">2</ion-select-option>
+          <ion-select-option value="3">3</ion-select-option>
+          <ion-select-option value="4">4</ion-select-option>
+
+        </ion-select>
+      </ion-item> 
+
+  
+
+    <ion-item>
+        <ion-icon name="clipboard" item-start ></ion-icon>
+        <ion-label>Bebida</ion-label>
+        <ion-select formControlName="drink"  value="brown" okText="Okay" cancelText="Dismiss" [(ngModel)]="todo.drink">
+          <ion-select-option value="COCA COLA 2LT">COCA COLA 2LT</ion-select-option>
+          <ion-select-option value="FANTA NARANJA">FANTA NARANJA 2LT</ion-select-option>
+          <ion-select-option value="SPRITE 2LT">SPRITE 2LT</ion-select-option>
+          <ion-select-option value="DASANI">DASANI</ion-select-option>
+
+        </ion-select>
+      </ion-item> 
+
+
+      <ion-item>
+          <ion-icon name="clipboard" item-start ></ion-icon>
+
+          <ion-label>Cantidad de bebidas</ion-label>
+          <ion-select formControlName="drink_quantity" value="brown" okText="Okay" cancelText="Dismiss" [(ngModel)]="todo.drink_quantity">
+            <ion-select-option value="0">0</ion-select-option>
+            <ion-select-option value="1">1</ion-select-option>
+            <ion-select-option value="2">2</ion-select-option>
+            <ion-select-option value="3">3</ion-select-option>
+  
+          </ion-select>
+        </ion-item> 
     
-    <ion-button type="submit" [disabled]="!formRegister.valid"  shape="round" expand="full" (click)="saveTodo()">
+    <ion-button  [disabled]="!formRegister.valid"  shape="round" expand="full" (click)="saveTodo()">
         <ion-icon name="send"></ion-icon>
         Enviar pedido
       </ion-button>

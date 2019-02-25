@@ -5,17 +5,48 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card *ngFor="let todos of todos">
-    <ion-card-header>
+<!--
+    <ion-list>
+        <ion-item button [routerLink]="['/todo', todo.id]" *ngFor="let todos of (todos | async)">
+          {{ todo.name }}
+        </ion-item>
+      </ion-list>
+
+      -->
+  <ion-list>
+      <ion-item-sliding *ngFor="let item of todos">
+          <ion-item >
+            <ion-label>
+              <h1>{{ item.category }}</h1>
+              <p>Nombre: {{item.name}}</p>
+              <p>Dirección: {{ item.location}}</p>
+              <p>Teléfono: {{item.telephone}}</p>
+              <p>Tamaño y precio: {{item.size}}</p>
+              <p>Cantidad de pizza: {{item.quantity}}</p>
+              <p>Bebida: {{item.drink}}</p>
+              <p>Cantidad de bebida: {{item.drink_quantity}}</p>
+
+              <p>Su pedido llega en 30 minutos</p>
+              <p>Sin cobro adicional de envío</p>
+              <ion-button expand="block" fill="outline" color="danger" (click)="deleteOrder(item)">
+                  <ion-icon name="trash" slot="start"></ion-icon>
+                  ANULAR PEDIDO
+                </ion-button>
+            </ion-label>
+           
+          </ion-item>
+   <!--  
+          <ion-item-options side="end">
+            <ion-item-option (click)="remove(item)" color="secondary">
+              Anular
+              <ion-icon name="trash" slot="start"></ion-icon>
+            </ion-item-option>
+          </ion-item-options>
+          -->
+        </ion-item-sliding>
+      </ion-list>    
       
-      <ion-card-title class="colortitulo">{{todos.category}}</ion-card-title>
-      
-    </ion-card-header>
-    <ion-card-content >
-        <h6>Nombre: {{todos.name}}</h6>
-      <h6>Dirección: {{todos.location}}</h6>
-      <h6>Teléfono: {{todos.telephone}}</h6>
-      <h6>Tipo de pizza: {{todos.size}}</h6>    
-    </ion-card-content>
-  </ion-card>
+     
+     
+    
 </ion-content>

@@ -16,6 +16,10 @@ export interface Todo {
   location: string;
   size: string;
   category: string;
+  quantity: string;
+  drink: string;
+  drink_quantity: string;
+
 }
 
 @Injectable({
@@ -58,7 +62,7 @@ export class TodoService {
     return this.todosCollection.add(todo);
   }
  
-  removeTodo(id) {
+  removeTodo(id): Promise<void> {
     return this.todosCollection.doc(id).delete();
   }
 
